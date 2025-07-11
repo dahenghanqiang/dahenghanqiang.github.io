@@ -1,15 +1,32 @@
 {
+  "private": true,
+  "name": "hugo-product-launch",
+  "version": "1.0.0",
+  "description": "A Hugo theme for young start-ups, product launches, and »coming soon«-websites. Includes contact form & newsletter sign up via Netlify.",
+  "main": "echo 'no main :)'",
   "scripts": {
-    "dev:theme": "hugo server --logLevel=debug --config=hugo.yaml,../dev.toml --environment=theme --source=exampleSite --themesDir=../.. -D --port 1313",
-    "dev": "hugo server --source=exampleSite --themesDir=../.. --disableFastRender -D --port 1313",
-    "build:css": "npx postcss --config postcss.config.mjs --env production assets/css/styles.css -o assets/css/compiled/main.css",
-    "build": "hugo --gc --minify --themesDir=../.. --source=exampleSite"
+    "test": "prettier --check . ",
+    "format": "prettier --write . "
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janraasch/hugo-product-launch.git"
+  },
+  "author": {
+    "name": "Jan Raasch",
+    "email": "jan@janraasch.com",
+    "url": "https://www.janraasch.com"
+  },
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/janraasch/hugo-product-launch/issues"
+  },
+  "homepage": "https://github.com/janraasch/hugo-product-launch#readme",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.8",
-    "postcss-cli": "^11.0.1",
-    "prettier": "^3.5.3",
-    "prettier-plugin-go-template": "^0.0.15",
-    "tailwindcss": "^4.1.8"
+    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/cli": "^4.1.11",
+    "prettier": "^3.6.1",
+    "prettier-plugin-go-template": "0.0.15",
+    "tailwindcss": "^4.1.11"
   }
 }

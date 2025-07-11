@@ -1,76 +1,55 @@
 ---
-title: Hextra Theme
-layout: hextra-home
+header_brand: "Builders Of The Future, Inc."
+header_tagline_paragraph: "Yes, we are glad you made it here. In fact, the only emotion stronger than our gladness is our desire to tell you more about what we are building. Bright times lie ahead. Let's get into it!"
+header_button_cta:
+  url: "#contact-form"
+  title: "Get in touch"
+header_button_more:
+  url: "#the-future---today"
+  title: "Why this is awesome?"
+teaser_image: "images/teaser.jpg" # https://www.pexels.com/search/product%20testing/
 ---
 
-{{< hextra/hero-badge >}}
-  <div class="hx:w-2 hx:h-2 hx:rounded-full hx:bg-primary-400"></div>
-  <span>Free, open source</span>
-  {{< icon name="arrow-circle-right" attributes="height=14" >}}
-{{< /hextra/hero-badge >}}
+# The Future - Today!
 
-<div class="hx:mt-6 hx:mb-6">
-{{< hextra/hero-headline >}}
-  Build modern websites&nbsp;<br class="hx:sm:block hx:hidden" />with Markdown and Hugo
-{{< /hextra/hero-headline >}}
-</div>
+Some introductory text to get you excited about what we are doing. For example, I could tell you what our [prototype](#prototype) can do and then link you to our [contact form](#contact-form) so you can get in touch to ask for a **one-on-one** (or more :-)) showcase session.
 
-<div class="hx:mb-12">
-{{< hextra/hero-subtitle >}}
-  Fast, batteries-included Hugo theme&nbsp;<br class="hx:sm:block hx:hidden" />for creating beautiful static websites
-{{< /hextra/hero-subtitle >}}
-</div>
+---
 
-<div class="hx:mb-6">
-{{< hextra/hero-button text="Get Started" link="docs" >}}
-</div>
+Have we caught your attention? We appreciate your feedback at this early stage of our product. Do not hesitate to contact us. In fact, if your interested, we'd love to give you a tour of the prototype we built.
 
-<div class="hx:mt-6"></div>
+{{< contact_form id="contact-form" placeholder_name="Name" placeholder_email="Email Address" placeholder_message="Message" button_label="Send ✉️">}}
 
-{{< hextra/feature-grid >}}
-  {{< hextra/feature-card
-    title="Fast and Full-featured"
-    subtitle="Simple and easy to use, yet powerful and feature-rich."
-    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
-    image="images/hextra-doc.webp"
-    imageClass="hx:top-[40%] hx:left-[24px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
-  >}}
-  {{< hextra/feature-card
-    title="Markdown is All You Need"
-    subtitle="Compose with just Markdown. Enrich with Shortcode components."
-    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
-    image="images/hextra-markdown.webp"
-    imageClass="hx:top-[40%] hx:left-[36px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
-  >}}
-  {{< hextra/feature-card
-    title="Full Text Search"
-    subtitle="Built-in full text search with FlexSearch, no extra setup required."
-    class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
-    image="images/hextra-search.webp"
-    imageClass="hx:top-[40%] hx:left-[36px] hx:w-[110%] hx:sm:w-[110%] hx:dark:opacity-80"
-    style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
-  >}}
-  {{< hextra/feature-card
-    title="Lightweight as a Feather"
-    subtitle="No dependency or Node.js is needed to use Hextra. Powered by Hugo, one of *the fastest* static site generators, building your site in just seconds with a single binary."
-  >}}
-  {{< hextra/feature-card
-    title="Responsive with Dark Mode Included"
-    subtitle="Looks great on different screen sizes. Built-in dark mode support, with auto-switching based on user's system preference."
-  >}}
-  {{< hextra/feature-card
-    title="Build and Host for Free"
-    subtitle="Build with GitHub Actions, and host for free on GitHub Pages. Alternatively it can be hosted on any static hosting service."
-  >}}
-  {{< hextra/feature-card
-    title="Multi-Language Made Easy"
-    subtitle="Create multi-language pages by just adding locales suffix to the Markdown file. Adding i18n support to your site is intuitive."
-  >}}
-  {{< hextra/feature-card
-    title="And Much More..."
-    icon="sparkles"
-    subtitle="Syntax highlighting / Table of contents / SEO / RSS / LaTeX / Mermaid / Customizable / and more..."
-  >}}
-{{< /hextra/feature-grid >}}
+---
+
+# Prototype
+
+You guessed it! We put our money where our mouth is. This is what we accomplished so far.
+
+![Prototype Work](images/prototype.jpg) <!-- https://www.pexels.com/search/product%20testing/ -->
+
+Check out this sweet preview. Impressed much, are you?
+
+---
+
+# Imprint & Privacy Policy
+
+Let's keep it simple. This is our contact information:
+
+Jane Doe
+1093 Simpson Square
+May 73851, OK
+USA
+
+E-mail: jane@doe.net
+Phone: 580-689-0577
+
+We take data privacy very seriously, so we make sure not to store anything we do not need. We do not have any tracking service, no cookies or anything like that. If you decide to use the contact form or the newsletter sign up this information will be stored on Netlify, a service we use to host this website. You can approach us any time to have your data removed or simply retrieve information about what information we did store.
+
+---
+
+# Stay in touch
+
+Let's stay in touch. Sign up for our newsletter. Do not worry, we will not bother you with boring details. Expect nice & tight updates about once or twice every 3 months.
+
+{{< newsletter_sign_up id="newsletter-sign-up-form" placeholder_email="Your Email" button_label="Sign up">}}

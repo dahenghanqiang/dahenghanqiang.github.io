@@ -1,5 +1,3 @@
-node_modules/
-public/
-resources/
-
-.hugo_build.lock
+public
+exampleSite/public
+node_modules

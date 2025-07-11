@@ -1,48 +1,110 @@
-<div align="center">
-  <h1 align="center">Hextra</h1>
-  <sup align="center"><a href="README.md">English</a> | <a href="README.zh-cn.md">简体中文</a> ｜ <a href="README.fa.md">فارسی</a></sup>
-  <p align="center">Modern, responsive, batteries-included Hugo theme for creating beautiful static websites.</p>
+# Hugo Product Launch [![CI](https://github.com/janraasch/hugo-product-launch/actions/workflows/ci.yml/badge.svg)](https://github.com/janraasch/hugo-product-launch/actions/workflows/ci.yml)
 
-Demo → [imfing.github.io/hextra](https://imfing.github.io/hextra/)
-</div>
+🚀 A [Hugo][hugo-io-url]-theme for young start-ups, product launches, and »coming soon«-websites. Includes ready-to-go contact form & newsletter sign up via [Netlify Forms][netlify-forms-url].
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/5097752/263550533-c18343ca-3848-4230-b5c0-ee989d7916da.png">
-  <img alt="Hextra" src="https://user-images.githubusercontent.com/5097752/263550528-663599f9-17a1-4686-b5c4-3da233b5034d.png">
-</picture>
+![Screenshot Hugo Product Theme](https://raw.githubusercontent.com/janraasch/hugo-product-launch/master/images/screenshot.png)
 
-<div align="right">
-<a href="https://github.com/imfing/hextra/actions/workflows/pages.yml"><img alt="GitHub Actions Status" src="https://github.com/imfing/hextra/actions/workflows/pages.yml/badge.svg"></a> <a href="https://app.netlify.com/sites/hugo-hextra/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/61d6e55a-2447-487e-b59f-c9537e5df175/deploy-status"></a>
-</div>
+## Demo
 
-## Features
+For a current & working demo of this theme, please check out https://hugo-product-launch.netlify.app/ 🎯.
 
-- **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.
-- **Responsive Layout and Dark Mode** - It looks great on all devices, from mobile to desktop. Dark mode is also supported to accommodate various lighting conditions.
-- **Fast and Lightweight** - Powered by Hugo, a lightning-fast static-site generator housed in a single binary file, Hextra keeps its footprint minimal. No JavaScript or Node.js are needed to use it.
-- **Full-text Search** - Built-in offline full-text search powered by FlexSearch, no extra configuration required.
-- **Battery-included** - Markdown, syntax highlighting, LaTeX math formulae, diagrams and Shortcodes elements to enhance your content. Table of contents, breadcrumbs, pagination, sidebar navigation and more are all automatically generated.
-- **Multi-language and SEO Ready** - Multi-language sites made easy with Hugo's multilingual mode. Out-of-the-box support is included for SEO tags, Open Graph, and Twitter Cards.
+## 🔑 Key Features
 
-## Quick Start
+- Pretty, quick & straightforward single-page design 🌻
+- Contact form 📇
+- Newsletter sign-up 📫
+- Responsive 📲
+- [One-click deploy 🚀 to netlify](https://app.netlify.com/start/deploy?repository=https://github.com/janraasch/hugo-product-launch-kickstart)
+- _No!-code_ Content Management via [Forestry](https://forestry.io) 💼
+- [tailwindcss](https://tailwindcss.com) for speedy styling 🏎
+- No! JavaScript 🥳
 
-### Use the template
+## One-click Deploy / Installation
 
-Using the [Hextra Starter Template](https://github.com/imfing/hextra-starter-template) is the simplest method to bootstrap a new website with Hextra theme. Get started by clicking the "Use this template" button on the template repository page.
+Deploy [🚀 Hugo Product Launch][github-url] to [netlify](https://www.netlify.com/) by clicking this button:
 
-The template repository also includes a [GitHub Actions workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) for deploying your website to GitHub Pages.
+[![Deploy to netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/janraasch/hugo-product-launch-kickstart)
 
-<img alt="Hextra Starter Template" src="https://user-images.githubusercontent.com/5097752/263551418-c403b9a9-a76c-47a6-8466-513d772ef0b7.jpg" width=600/>
+Alternatively, you may also clone the [kickstart-repo](https://github.com/janraasch/hugo-product-launch-kickstart), and skip right to the [usage instructions](#usage)
 
-### Usage
+## Manual Installation
 
-Refer to the [documentation](https://imfing.github.io/hextra/docs) for more information.
+If you already have a Hugo site on your machine, you can simply add this theme via
 
-## Contributing
+```
+git submodule add https://github.com/janraasch/hugo-product-launch.git themes/hugo-product-launch
+```
 
-Contributions are welcome.
-Check out the [contributing guide](.github/CONTRIBUTING.md) to get started.
+Then, adjust the `hugo.toml` as [detailed below](#usage).
+
+For more information, read the official [setup guide](https://gohugo.io/getting-started/installing) of Hugo.
+
+#### Example Content
+
+Simply copy over the contents of the `exampleSite`-directory included in this theme to your source directory. That should give you a good idea about how things work, and then you can go on from there to make the site your own.
+
+#### NodeJS Dependencies
+
+You need to have [NodeJS](https://nodejs.org) installed. Then, copy the `package.json`- & `package-lock.json`-files from the root of this theme to your site's root. Run `npm install`.
+
+#### Take over `main.css`
+
+Simply copy over the `assets/css/main.css`-file from this repo into your local `assets/css`-folder. You may then add any CSS you like into your own `assets/css/main.css`-file. See [tailwindcss > docs > configuration](https://tailwindcss.com/docs/configuration) for more details.
+
+## Usage
+
+If you would like to have a nice & clean _no!-code_ User Interface 🧁 for Content Management, simply connect your repository with [Forestry](https://forestry.io). We included the necessary batteries 🔋 (i.e. settings) on the `exampleSite/.forestry`-folder so you are ready to go right out of the gate.
+
+### Base configuration: `hugo.toml`
+
+Please check out the [`hugo.toml`](https://github.com/janraasch/hugo-product-launch/blob/master/exampleSite/hugo.toml)-file included in the [exampleSite](https://github.com/janraasch/hugo-product-launch/tree/master/exampleSite) of this theme.
+
+### Adding Content: `content/_index.md`
+
+Start with the contents provided in the [`_index.md`](https://github.com/janraasch/hugo-product-launch/blob/master/exampleSite/content/_index.md)-file in the [`exampleSite/content`](https://github.com/janraasch/hugo-product-launch/tree/master/exampleSite/content)-directory. That should give you a good idea about how things work, and then you can go on from there to make the site your own.
+
+This [markdown cheat-sheet](https://www.markdownguide.org/cheat-sheet) might come in handy 🙌🏻.
+
+### Adding your branding / colors / css: `assets/css/main.css`
+
+Check out the [`main.css`](https://github.com/janraasch/hugo-product-launch/blob/master/assets/css/main.css)-file from the [`assets/css`](https://github.com/janraasch/hugo-product-launch/tree/master/assets/css)-directory to get started and to find more detailed instructions.
+
+## Issues / Feedback / Contributing
+
+Please use [GitHub issues][github-issues-url] and [Pull Requests][github-pulls-url].
+
+If you do not have a GitHub-account, feel free to hit me up via email (see [janraasch.com][author-url]).
+
+## Special Thanks 🎁
+
+- Go to [favicon.io][favicon-io-url], for supplying a quick & easy way to create the [favicon used on the exampleSite][favicon-io-example-site-url].
+- Go to [Pexels][pexels-url], for supplying those wonderful free stock photos on the [exampleSite][github-example-site-url].
 
 ## License
 
-[MIT License](./LICENSE)
+[Hugo Product Launch][github-url] by [Jan Raasch][author-url] is licensed under [CC BY 4.0][license-url]
+
+### Attribution
+
+Please keep the original attribution link when using this theme for your project.
+
+### More Permissions
+
+If you would like to use this theme without attribution, permissions beyond this license's scope are available at [MORE_PERMISSIONS.md][more-permissions-url].
+
+[![CC][license-cc-svg] ![BY][license-by-svg]][license-url]
+
+[more-permissions-url]: https://github.com/janraasch/hugo-product-launch/blob/master/MORE_PERMISSIONS.md
+[github-url]: https://github.com/janraasch/hugo-product-launch
+[github-example-site-url]: https://github.com/janraasch/hugo-product-launch/tree/master/exampleSite
+[github-issues-url]: https://github.com/janraasch/hugo-product-launch/issues
+[github-pulls-url]: https://github.com/janraasch/hugo-product-launch/pulls
+[author-url]: https://www.janraasch.com
+[license-url]: https://creativecommons.org/licenses/by/4.0
+[license-cc-svg]: https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1
+[license-by-svg]: https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1
+[hugo-io-url]: https://gohugo.io/
+[netlify-forms-url]: https://www.netlify.com/products/forms/
+[favicon-io-url]: https://favicon.io
+[favicon-io-example-site-url]: https://favicon.io/favicon-generator/?t=BF&ff=Catamaran&fs=110&fc=%23FFFFFF&b=rounded&bc=%2338b2ac
+[pexels-url]: https://www.pexels.com
