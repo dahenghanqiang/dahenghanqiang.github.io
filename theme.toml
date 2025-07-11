@@ -1,38 +1,17 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
-name = "Hugo Product Launch"
-license = "Creative Commons Attribution 4.0 International Public License (CC BY 4.0)"
-licenselink = "https://github.com/janraasch/hugo-product-launch/blob/master/LICENSE"
-description = "A Hugo theme for young start-ups, product launches, and »coming soon«-websites. Includes contact form & newsletter sign up via Netlify. Deploy with one click!"
-homepage = "https://github.com/janraasch/hugo-product-launch"
-demosite = "https://hugo-product-launch.netlify.app"
-tags = [
-  "bootstrap",
-  "business",
-  "company",
-  "contact",
-  "ecommerce",
-  "hero",
-  "light",
-  "landing",
-  "minimal",
-  "newsletter",
-  "tailwind",
-]
-features = [
-  "cover-image",
-  "favicon",
-  "responsive",
-  "fast",
-  "tailwind",
-  "contact",
-  "newsletter sign-up",
-  "netlify",
-  "netlify forms"
-]
-min_version = "v0.147.4"
+name = "Beautiful Hugo"
+license = "MIT"
+licenselink = "https://github.com/halogenica/Hugo-BeautifulHugo/blob/master/LICENSE"
+description = "An adaptation of the Beautiful Jekyll theme"
+tags = ["blog", "company", "portfolio", "projects", "minimal", "responsive", "seo", "google analytics", "bootstrap", "disqus", "light", "syntax highlighting", "multilingual", "portfolio", "projects", "mobile", "technical"]
+features = ["blog", "company", "portfolio", "projects", "minimal", "responsive", "seo", "google analytics", "bootstrap", "disqus", "light", "syntax highlighting", "multilingual", "portfolio", "projects", "mobile", "technical"]
+min_version = "0.124.0"
 
 [author]
-  name = "Jan Raasch"
-  homepage = "https://www.janraasch.com"
+    name = "halogenica"
+    homepage = "https://halogenica.net"
+
+# If Porting existing theme
+[original]
+    author =  "dattali"
+    homepage = "https://beautifuljekyll.com"
+    repo = "https://github.com/daattali/beautiful-jekyll"

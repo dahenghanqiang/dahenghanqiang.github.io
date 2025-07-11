@@ -1,110 +1,276 @@
-# Hugo Product Launch [![CI](https://github.com/janraasch/hugo-product-launch/actions/workflows/ci.yml/badge.svg)](https://github.com/janraasch/hugo-product-launch/actions/workflows/ci.yml)
+# Beautiful Hugo - An adaptation of the Beautiful Jekyll theme
 
-🚀 A [Hugo][hugo-io-url]-theme for young start-ups, product launches, and »coming soon«-websites. Includes ready-to-go contact form & newsletter sign up via [Netlify Forms][netlify-forms-url].
+![Beautiful Hugo Theme Screenshot](https://github.com/halogenica/beautifulhugo/blob/master/images/screenshot.png)
 
-![Screenshot Hugo Product Theme](https://raw.githubusercontent.com/janraasch/hugo-product-launch/master/images/screenshot.png)
+## Live demo
 
-## Demo
+See https://hugo-theme-beautifulhugo.netlify.app/
 
-For a current & working demo of this theme, please check out https://hugo-product-launch.netlify.app/ 🎯.
+## Installation
 
-## 🔑 Key Features
+Install Hugo and create a new site. See [the Hugo documentation](https://gohugo.io/getting-started/quick-start/) for details.
 
-- Pretty, quick & straightforward single-page design 🌻
-- Contact form 📇
-- Newsletter sign-up 📫
-- Responsive 📲
-- [One-click deploy 🚀 to netlify](https://app.netlify.com/start/deploy?repository=https://github.com/janraasch/hugo-product-launch-kickstart)
-- _No!-code_ Content Management via [Forestry](https://forestry.io) 💼
-- [tailwindcss](https://tailwindcss.com) for speedy styling 🏎
-- No! JavaScript 🥳
+### Git Submodule
 
-## One-click Deploy / Installation
+Add Beautifulhugo as git submodule:
 
-Deploy [🚀 Hugo Product Launch][github-url] to [netlify](https://www.netlify.com/) by clicking this button:
+    $ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
 
-[![Deploy to netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/janraasch/hugo-product-launch-kickstart)
+### Hugo module
 
-Alternatively, you may also clone the [kickstart-repo](https://github.com/janraasch/hugo-product-launch-kickstart), and skip right to the [usage instructions](#usage)
+Initialize your site as hugo module:
 
-## Manual Installation
+    $ hugo mod init github.com/USERNAME/SITENAME
 
-If you already have a Hugo site on your machine, you can simply add this theme via
+Add Beautifulhugo module as a dependency of your site:
+
+    $ hugo mod get github.com/halogenica/beautifulhugo
+
+### Site preview
+
+Copy the content of `exampleSite` at the root of your project:
+
+    cp -r themes/beautifulhugo/exampleSite/* . -iv
+
+If you installed Beautifulhugo as hugo module, set your theme in your config file (hugo.toml):
+
+    [[module.imports]]
+      path = "github.com/halogenica/beautifulhugo"
+
+Start Hugo:
+
+    hugo serve
+
+## Extra Features
+
+### Responsive
+
+This theme is designed to look great on both large-screen and small-screen (mobile) devices.
+
+### Syntax highlighting
+
+This theme has support for either Hugo's lightning fast Chroma, or both server side and client side highlighting. See [the Hugo docs for more](https://gohugo.io/content-management/syntax-highlighting/).
+
+#### Chroma - New server side syntax highlighting
+
+To enable Chroma, add the following to your site parameters:
 
 ```
-git submodule add https://github.com/janraasch/hugo-product-launch.git themes/hugo-product-launch
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 ```
 
-Then, adjust the `hugo.toml` as [detailed below](#usage).
+Then, you can generate a different style by running:
 
-For more information, read the official [setup guide](https://gohugo.io/getting-started/installing) of Hugo.
+```
+hugo gen chromastyles --style=trac > static/css/syntax.css
+```
 
-#### Example Content
+#### Pygments - Old server side syntax highlighting
 
-Simply copy over the contents of the `exampleSite`-directory included in this theme to your source directory. That should give you a good idea about how things work, and then you can go on from there to make the site your own.
+To use this feature install Pygments (`pip install Pygments`) and add the following to your site parameters:
 
-#### NodeJS Dependencies
+```
+pygmentsStyle = "trac"
+pygmentsUseClassic = true
+```
 
-You need to have [NodeJS](https://nodejs.org) installed. Then, copy the `package.json`- & `package-lock.json`-files from the root of this theme to your site's root. Run `npm install`.
+Pygments is mostly compatible with the newer Chroma. It is slower but has some additional theme options. I recommend Chroma over Pygments. Pygments will use `syntax.css` for highlighting, unless you also set the config `pygmentsUseClasses = false` which will generate the style code directly in the HTML file. 
 
-#### Take over `main.css`
+#### Highlight.js - Client side syntax highlighting
+```
+[Params]
+    useHLJS = true
+```
 
-Simply copy over the `assets/css/main.css`-file from this repo into your local `assets/css`-folder. You may then add any CSS you like into your own `assets/css/main.css`-file. See [tailwindcss > docs > configuration](https://tailwindcss.com/docs/configuration) for more details.
+Client side highlighting does not require pygments to be installed. This will use `highlight.min.css` instead of `syntax.css` for highlighting (effectively disabling Chroma). Highlight.js has a wider range of support for languages and themes, and an alternative highlighting engine.
 
-## Usage
+### Disqus support
 
-If you would like to have a nice & clean _no!-code_ User Interface 🧁 for Content Management, simply connect your repository with [Forestry](https://forestry.io). We included the necessary batteries 🔋 (i.e. settings) on the `exampleSite/.forestry`-folder so you are ready to go right out of the gate.
+To use this feature add your disqus shortname to the hugo.toml file like this:
 
-### Base configuration: `hugo.toml`
+```toml
+[services]
+  [services.disqus]
+    shortname = ''
+```
 
-Please check out the [`hugo.toml`](https://github.com/janraasch/hugo-product-launch/blob/master/exampleSite/hugo.toml)-file included in the [exampleSite](https://github.com/janraasch/hugo-product-launch/tree/master/exampleSite) of this theme.
+For further reference see [hugo config](https://gohugo.io/methods/site/config/)
 
-### Adding Content: `content/_index.md`
+### Staticman support
 
-Start with the contents provided in the [`_index.md`](https://github.com/janraasch/hugo-product-launch/blob/master/exampleSite/content/_index.md)-file in the [`exampleSite/content`](https://github.com/janraasch/hugo-product-launch/tree/master/exampleSite/content)-directory. That should give you a good idea about how things work, and then you can go on from there to make the site your own.
+Add *Staticman* configuration section in `hugo.toml` or `hugo.yaml`
 
-This [markdown cheat-sheet](https://www.markdownguide.org/cheat-sheet) might come in handy 🙌🏻.
+Sample `hugo.toml` configuration
 
-### Adding your branding / colors / css: `assets/css/main.css`
+```
+[Params.staticman]
+  api = "https://<API-ENDPOINT>/v3/entry/{GIT-HOST}/<USERNAME>/<REPOSITORY-BLOGNAME>/master/comments"
+[Params.staticman.recaptcha]
+      sitekey: "6LeGeTgUAAAAAAqVrfTwox1kJQFdWl-mLzKasV0v"
+      secret: "hsGjWtWHR4HK4pT7cUsWTArJdZDxxE2pkdg/ArwCguqYQrhuubjj3RS9C5qa8xu4cx/Y9EwHwAMEeXPCZbLR9eW1K9LshissvNcYFfC/b8KKb4deH4V1+oqJEk/JcoK6jp6Rr2nZV4rjDP9M7nunC3WR5UGwMIYb8kKhur9pAic="
+```
 
-Check out the [`main.css`](https://github.com/janraasch/hugo-product-launch/blob/master/assets/css/main.css)-file from the [`assets/css`](https://github.com/janraasch/hugo-product-launch/tree/master/assets/css)-directory to get started and to find more detailed instructions.
+Note: The public `API-ENDPOINT` https://staticman.net is currently hitting its API limit, so one may use other API instances to provide Staticman comment service.
 
-## Issues / Feedback / Contributing
+The section `[Params.staticman.recaptcha]` is *optional*.  To add reCAPTCHA to your site, you have to replace the default values with your own ones (to be obtained from Google.)  The site `secret` has to be encrypted with
 
-Please use [GitHub issues][github-issues-url] and [Pull Requests][github-pulls-url].
+    https://<API-ENDPOINT>/v3/encrypt/<SITE-SECRET>
 
-If you do not have a GitHub-account, feel free to hit me up via email (see [janraasch.com][author-url]).
+You must also configure the `staticman.yml` in you blog website.
 
-## Special Thanks 🎁
+```
+comments:
+  allowedFields: ["name", "email", "website", "comment"]
+  branch            : "master"
+  commitMessage     : "New comment in {options.slug}"
+  path: "data/comments/{options.slug}"
+  filename          : "comment-{@timestamp}"
+  format            : "yaml"
+  moderation        : true
+  requiredFields    : ['name', 'email', 'comment']
+  transforms:
+    email           : md5
+  generatedFields:
+    date:
+      type          : "date"
+      options:
+        format      : "iso8601"
+  reCaptcha:
+    enabled: true
+    siteKey: "6LeGeTgUAAAAAAqVrfTwox1kJQFdWl-mLzKasV0v"
+    secret: "hsGjWtWHR4HK4pT7cUsWTArJdZDxxE2pkdg/ArwCguqYQrhuubjj3RS9C5qa8xu4cx/Y9EwHwAMEeXPCZbLR9eW1K9LshissvNcYFfC/b8KKb4deH4V1+oqJEk/JcoK6jp6Rr2nZV4rjDP9M7nunC3WR5UGwMIYb8kKhur9pAic="
+```
 
-- Go to [favicon.io][favicon-io-url], for supplying a quick & easy way to create the [favicon used on the exampleSite][favicon-io-example-site-url].
-- Go to [Pexels][pexels-url], for supplying those wonderful free stock photos on the [exampleSite][github-example-site-url].
+If you *don't* have the section `[Params.staticman]` in `hugo.toml`, you *won't* need the section `reCaptcha`  in `staticman.yml`
+
+### Site Disclaimer
+
+If you need to put a Disclaimer on your website (e.g. "My views are my own and not my employer's"), you can do so via the following:
+
+* Uncomment and edit the `disclaimerText` parameter in `hugo.toml`.
+* If you need to adjust the disclaimer's styling, modify the declarations within the `footer div.disclaimer` selector in `static/css/main.css`.
+
+> The code for the disclaimer text is in `layouts/partials/footer.html`.  Moving this code block to another partial file (or relocating it within `footer.html`) will require changes to the css selector in `main.css` as well.
+
+### Google Analytics
+
+Sign up to [Google Analytics](https://www.google.com/analytics/) to obtain your Google Tracking ID.
+
+To use this feature add your Google Analytics ID to the hugo.toml file like this:
+
+```
+[services]
+  [services.googleAnalytics]
+    id = ''
+```
+
+Note that the Google Analytics tracking code will only be inserted into the page when the site isn't served on Hugo's built-in server, to prevent tracking from local testing environments.
+
+### Commit SHA on the footer
+
+If the source of your site is in a Git repo, the SHA corresponding to the commit the site is built from can be shown on the footer. To do so, two site parameters `commit` has to be defined in the config file `hugo.toml`:
+
+```
+enableGitInfo = true
+[Params]
+  commit = "https://github.com/<username>/<siterepo>/tree/"
+```
+
+See at [vincenttam/vincenttam.gitlab.io](https://gitlab.com/vincenttam/vincenttam.gitlab.io) for an example of how to add it to a continuous integration system.
+
+### Multilingual
+
+To allow Beautiful Hugo to go multilingual, you need to define the languages
+you want to use inside the `languages` parameter on `hugo.toml` file, also
+redefining the content dir for each one. Check the `i18n/` folder to see all
+languages available.
+
+```toml
+[languages]
+  [languages.en] 
+    contentDir = "content/en" # English
+  [languages.ja]
+    contentDir = "content/ja" # Japanese
+  [languages.br]
+    contentDir = "content/br" # Brazilian Portuguese
+```
+
+Now you just need to create a subdir within the `content/` folder for each
+language and just put stuff inside `page/` and `post/` regular directories.
+```
+content/      content/      content/  
+└── en/       └── br/       └── ja/ 
+    ├── page/     ├── page/     ├── page/
+    └── post/     └── post/     └── post/
+
+```
+
+### Self Hosted assets for GDPR / EU-DSGVO compliance
+
+With default settings, visiting to a website using Beautifulhugo connects also to remote services like google fonts or jsdelivr to embed fonts, js and other assets.
+
+To avoid this, set the following param in hugo.toml:
+
+```
+[Params]
+  selfHosted = true
+```
+
+### Extra shortcodes
+
+There are two extra shortcodes provided (along with the customized figure shortcode):
+
+#### Details
+
+This simply adds the html5 detail attribute, supported on all *modern* browsers. Use it like this:
+
+```
+{{< details "This is the details title (click to expand)" >}}
+This is the content (hidden until clicked).
+{{< /details >}}
+```
+
+#### Split
+
+This adds a two column side-by-side environment (will turn into 1 col for narrow devices):
+
+```
+{{< columns >}}
+This is column 1.
+{{< column >}}
+This is column 2.
+{{< endcolumns >}}
+```
+
+### Social Media Icons
+
+In order to show social media icons in the footer, add a section like this to your `hugo.yaml` or `hugo.toml`.  You can see the full list of supported social media sites in `data/beautifulhugo/social.toml`.
+
+```yaml
+author: 
+  name: "Author Name"
+  website: "https://example.com"
+  github: halogenica/beautifulhugo
+  twitter: username
+  discord: 96VAXXvjCB
+  ...
+```
+
+```toml
+[Params.author]
+    name = "Author Name"
+    website = "https://example.com"
+    github = "halogenica/beautifulhugo"
+    twitter = "username"
+    discord = "96VAXXvjCB"
+    ...
+```
+
+## About
+
+This is an adaptation of the Jekyll theme [Beautiful Jekyll](https://deanattali.com/beautiful-jekyll/) by [Dean Attali](https://deanattali.com/aboutme#contact). It supports most of the features of the original theme, and many new features. It has diverged from the Jekyll theme over time, with years of community updates.
 
 ## License
 
-[Hugo Product Launch][github-url] by [Jan Raasch][author-url] is licensed under [CC BY 4.0][license-url]
-
-### Attribution
-
-Please keep the original attribution link when using this theme for your project.
-
-### More Permissions
-
-If you would like to use this theme without attribution, permissions beyond this license's scope are available at [MORE_PERMISSIONS.md][more-permissions-url].
-
-[![CC][license-cc-svg] ![BY][license-by-svg]][license-url]
-
-[more-permissions-url]: https://github.com/janraasch/hugo-product-launch/blob/master/MORE_PERMISSIONS.md
-[github-url]: https://github.com/janraasch/hugo-product-launch
-[github-example-site-url]: https://github.com/janraasch/hugo-product-launch/tree/master/exampleSite
-[github-issues-url]: https://github.com/janraasch/hugo-product-launch/issues
-[github-pulls-url]: https://github.com/janraasch/hugo-product-launch/pulls
-[author-url]: https://www.janraasch.com
-[license-url]: https://creativecommons.org/licenses/by/4.0
-[license-cc-svg]: https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1
-[license-by-svg]: https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1
-[hugo-io-url]: https://gohugo.io/
-[netlify-forms-url]: https://www.netlify.com/products/forms/
-[favicon-io-url]: https://favicon.io
-[favicon-io-example-site-url]: https://favicon.io/favicon-generator/?t=BF&ff=Catamaran&fs=110&fc=%23FFFFFF&b=rounded&bc=%2338b2ac
-[pexels-url]: https://www.pexels.com
+MIT Licensed, see [LICENSE](https://github.com/halogenica/Hugo-BeautifulHugo/blob/master/LICENSE).
