@@ -1,145 +1,48 @@
 <div align="center">
-  <br>
-  <img src="/images/reverie-text.png" alt="Reverie" width="200"/>
-  <br>  
-  <p align="center">
-    <i>Support my work via <a href="https://paypal.me/AmitMerchant">Paypal</a> or <a href="https://buymeacoffee.com/amitmerchant">Buy me a coffee</a></i>
-  </p>
+  <h1 align="center">Hextra</h1>
+  <sup align="center"><a href="README.md">English</a> | <a href="README.zh-cn.md">简体中文</a> ｜ <a href="README.fa.md">فارسی</a></sup>
+  <p align="center">Modern, responsive, batteries-included Hugo theme for creating beautiful static websites.</p>
+
+Demo → [imfing.github.io/hextra](https://imfing.github.io/hextra/)
 </div>
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/5097752/263550533-c18343ca-3848-4230-b5c0-ee989d7916da.png">
+  <img alt="Hextra" src="https://user-images.githubusercontent.com/5097752/263550528-663599f9-17a1-4686-b5c4-3da233b5034d.png">
+</picture>
 
-Reverie is a [Jekyll](https://jekyllrb.com/)-powered theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for my blog.
+<div align="right">
+<a href="https://github.com/imfing/hextra/actions/workflows/pages.yml"><img alt="GitHub Actions Status" src="https://github.com/imfing/hextra/actions/workflows/pages.yml/badge.svg"></a> <a href="https://app.netlify.com/sites/hugo-hextra/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/61d6e55a-2447-487e-b59f-c9537e5df175/deploy-status"></a>
+</div>
 
-> [Theme demo](https://reverie.pages.dev/)
+## Features
 
-This is a plug-and-play Jekyll theme best suited to use on [GitHub Pages](https://pages.github.com) (or [Cloudflare Pages](https://pages.cloudflare.com/) if you want to have your repository private) without even setting up a local environment.
+- **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.
+- **Responsive Layout and Dark Mode** - It looks great on all devices, from mobile to desktop. Dark mode is also supported to accommodate various lighting conditions.
+- **Fast and Lightweight** - Powered by Hugo, a lightning-fast static-site generator housed in a single binary file, Hextra keeps its footprint minimal. No JavaScript or Node.js are needed to use it.
+- **Full-text Search** - Built-in offline full-text search powered by FlexSearch, no extra configuration required.
+- **Battery-included** - Markdown, syntax highlighting, LaTeX math formulae, diagrams and Shortcodes elements to enhance your content. Table of contents, breadcrumbs, pagination, sidebar navigation and more are all automatically generated.
+- **Multi-language and SEO Ready** - Multi-language sites made easy with Hugo's multilingual mode. Out-of-the-box support is included for SEO tags, Open Graph, and Twitter Cards.
 
-![](/images/reverie-demo.png)
+## Quick Start
 
-|  Responsiveness            |  Search | Categories |
-|---------------------|----------------------|----------------------|
-|![Responsiveness](/images/mobile-demo.png) | ![search](/images/search.png) | ![categories](/images/categories.png) |
+### Use the template
 
-# Table of Contents
-  - [Features overview](#features-overview)
-  - [Using Reverie on GitHub Pages](#using-reverie-on-github-pages)
-    - [1. Fork Reverie to your User Repository](#1-fork-reverie-to-your-user-repository)
-    - [2. Customize and view your site](#2-customize-and-view-your-site)
-    - [3. Publish your first blog post](#3-publish-your-first-blog-post)
-  - [Using Categories in Reverie](#using-categories-in-reverie)
-  - [Pagination](#pagination)
-  - [RSS](#rss)
-  - [Sitemap](#sitemap)
-  - [Troubleshooting](#troubleshooting)
-  - [Emailware](#emailware)
-  - [The name?](#the-name)
-  - [License](#license)
+Using the [Hextra Starter Template](https://github.com/imfing/hextra-starter-template) is the simplest method to bootstrap a new website with Hextra theme. Get started by clicking the "Use this template" button on the template repository page.
 
-{:toc}
+The template repository also includes a [GitHub Actions workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) for deploying your website to GitHub Pages.
 
-## Features overview
+<img alt="Hextra Starter Template" src="https://user-images.githubusercontent.com/5097752/263551418-c403b9a9-a76c-47a6-8466-513d772ef0b7.jpg" width=600/>
 
-- Clean and minimal design
-- Single column post layout
-- Command-line free fork-first workflow, using GitHub.com to create, customize and post to your blog
-- Fully responsive and mobile optimized theme
-- Sass/Coffeescript support using Jekyll 2.0
-- Free hosting on your GitHub Pages user site
-- All the SEO goodies come built-in
-- Markdown blogging
-- Supports [Pullquotes](https://reverie-jekyll.netlify.app/pullquotes/)
-- Syntax highlighting using Pygments
-    - [Dracula syntax theme](https://draculatheme.com/) included
-- Disqus commenting
-- Social media icons
-- Google Analytics integration
-- Supports [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en)
-- Fuzzy search across blog posts
-- Blog with pagination
-- Categorize posts out-of-the box
-- RSS Feed
-- Built-in sitemap
+### Usage
 
-> <p><i>Like this theme?</i> If so, consider donating a small amount that will help my maintaining this project further.<p>
-> You can support me via <a href="https://paypal.me/AmitMerchant">Paypal</a>.
+Refer to the [documentation](https://imfing.github.io/hextra/docs) for more information.
 
-## Using Reverie on GitHub Pages
+## Contributing
 
-Setting up Reverie on GitHub Pages is as simple as it gets!
-
-### 1. Fork Reverie to your User Repository
-
-Fork this repository, then rename the repository to `yourgithubusername.github.io`.
-
-Alternatively, you can click the [`Use this template`](https://github.com/amitmerchant1990/reverie/generate) button if you want to create a repository with a clean commit history which will use Reverie as a template.
-
-Your Jekyll blog will often be viewable immediately at <https://yourgithubusername.github.io> (if it's not, you can often force it to build by completing step 2).
-
-### 2. Customize and view your site
-
-Enter your site name, description, avatar and many other options by editing the `_config.yml` file. You can easily turn on Google Analytics tracking, Disqus commenting and social icons here.
-
-Making a change to `_config.yml` (or any file in your repository) will force GitHub Pages to rebuild your site with Jekyll. Your rebuilt site will be viewable a few seconds later at <https://yourgithubusername.github.io> - if not, give it ten minutes as GitHub suggests and it'll appear soon.
-
-### 3. Publish your first blog post
-
-Delete all files from `_posts`directory and create a new file called `/_posts/2019-2-13-Hello-World.md` to publish your first blog post. That's all you need to do to publish your first blog post! This [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) might come in handy while writing the posts.
-
-> You can add additional posts in the browser on GitHub.com too! Just hit the <kbd>Create new file</kbd> button in `/_posts/` to create new content. Just make sure to include the [front-matter](http://jekyllrb.com/docs/frontmatter/) block at the top of each new blog post and make sure the post's filename is in this format: year-month-day-title.md
-
-## Using Categories in Reverie
-
-You can categorize your content based on `categories` in Reverie. For this, you just need to add `categories` in front matter like below:
-
-For adding single category:
-
-```md
-categories: JavaScript
-```
-
-For adding multiple categories:
-
-```md
-categories: [PHP, Laravel]
-```
-
-The categorized content can be shown over this URL: <https://yourgithubusername.github.io/categories/>
-
-## Pagination
-
-Pagination of posts in Reverie works out-of-the-box. You only need to specify the number of posts you want on a single page in `_config.yml` and Reverie will take care of the rest.
-
-```yml
-paginate: 6
-```
-
-## RSS
-
-Reverie comes with a [RSS feed](https://en.wikipedia.org/wiki/RSS) in-built. The generated RSS Feed of your blog can be found at <https://yourgithubusername.github.io/feed>. You can see the example RSS feed over [here](https://reverie-jekyll.netlify.app/feed.xml).
-
-## Sitemap
-
-The generated sitemap of your blog can be found at <https://yourgithubusername.github.io/sitemap.xml>. You can see the example sitemap feed over [here](https://reverie-jekyll.netlify.app/sitemap.xml).
-
-## Troubleshooting
-
-There might be instances where your site based on Reverie won't have the styling working as expected. 
-
-The common reason for this issue is the incorrect `baseurl` set in the `_config.yml` file. You need to use the `baseurl` according to where you're hosting it.
-
-So, for instance, if you're hosting your site at a Project repository on GitHub pages (http://yourusername.github.io/repository-name) and NOT your user repository (http://yourusername.github.io) then the `baseurl` will be `/repository-name`.
-
-Otherwise the `baseurl` will be `/`.
-
-## Emailware
-Reverie is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this theme or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
-
-## The name?
-
-reverie - _a state of being pleasantly lost in one's thoughts; a daydream._<br><sup>/ˈrɛv(ə)ri/</sup> 
-
+Contributions are welcome.
+Check out the [contributing guide](.github/CONTRIBUTING.md) to get started.
 
 ## License
 
-MIT
+[MIT License](./LICENSE)
